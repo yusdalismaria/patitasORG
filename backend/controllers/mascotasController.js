@@ -43,14 +43,14 @@ const updateMascotas = asyncHandler(async(req, res) => {
         throw new Error('Mascota no encontradaa')
     }
 
-    const user = await User.findById(req.user.id);
+    //const user = await User.findById(req.user.id);
     //check x user
-    if (!user) {
+    if (!req.user) {
         res.status(401);
         throw new Error('User not found');
     }
     //asegurarnos q el usario logeado es el de la mscota
-    if (mascota.user.toString() !== user.id) {
+    if (mascota.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error('User not authorized')
     }
@@ -71,14 +71,14 @@ const deleteMascotas = asyncHandler(async(req, res) => {
         throw new Error('Mascota no encontrada')
     }
 
-    const user = await User.findById(req.user.id);
+    //const user = await User.findById(req.user.id);
     //check x user
-    if (!user) {
+    if (!req.user) {
         res.status(401);
         throw new Error('User not found');
     }
     //asegurarnos q el usario logeado es el de la mscota
-    if (mascota.user.toString() !== user.id) {
+    if (mascota.user.toString() !== req.user.id) {
         res.status(401);
         throw new Error('User not authorized')
     }
