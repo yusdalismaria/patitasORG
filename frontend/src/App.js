@@ -5,6 +5,9 @@ import Header from './components/Header'
 import Dashboard from './pages/Dashboard'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Mascotas from './pages/Mascotas'
+import Aspirantes from './pages/Aspirantes'
+import Trabajadores from './pages/Trabajadores'
 
 function App() {
     return(
@@ -17,6 +20,10 @@ function App() {
             <Route path='/' element={<Dashboard/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
+            <Route path='/mascotas' element={<Mascotas/>}/>
+            <Route path='/aspirantes' element={<Aspirantes/>}/>
+            <Route path='/trabajadores' element={<Trabajadores/>}/>
+
         </Routes>
         </div>
 

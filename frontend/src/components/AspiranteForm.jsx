@@ -1,9 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 import {useDispatch} from 'react-redux' 
-import {createMascota} from '../features/mascotas/mascotasSlice'
+import {createAspirante} from '../features/aspirantes/aspiranteSlice'
 
-function MascotaForm() {
+function AspiranteForm() {
 
     const [text,setText]=useState('');
     
@@ -12,7 +12,7 @@ function MascotaForm() {
     const onSubmit=e=>{
         e.preventDefault();
 
-        dispatch(createMascota({text}))
+        dispatch(createAspirante({text}))
         setText('')
     }
 
@@ -20,7 +20,7 @@ function MascotaForm() {
     <section className='form'>
         <form onSubmit={onSubmit}>
         <div className="form-group">
-            <label htmlFor="text">Nombre mascota</label>
+            <label htmlFor="text">Nombre aspirante</label>
             <input type="text" 
             name="text" 
             id="text" 
@@ -30,11 +30,11 @@ function MascotaForm() {
         </div>
   
         <div className="form-group">
-            <button className="btn btn-block" type="submit">Add Mascota!</button>
+            <button className="btn btn-block" type="submit">Add Aspirante!</button>
         </div>
         </form>
     </section>
   )
 }
 
-export default MascotaForm
+export default AspiranteForm
